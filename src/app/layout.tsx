@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { AuthProvider } from "@/lib/auth";
 
 export const metadata: Metadata = {
     title: "Komanda Ryžys",
@@ -13,7 +14,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className="bg-gray-50 text-gray-900">{children}</body>
+            <body className="bg-gray-50 text-gray-900">
+                <AuthProvider>{children}</AuthProvider>
+            </body>
         </html>
     );
 }
